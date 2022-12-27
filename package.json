@@ -7,7 +7,7 @@
     "node": "14.x"
   },
   "scripts": {
-    "start": "node server.ts",
+    "start": "cd src && nodemon server.ts",
     "build": "npm install && tsc"
   },
   "keywords": [],
