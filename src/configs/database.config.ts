@@ -1,5 +1,8 @@
+require('dotenv').config({ path: '/.env' })
 import { connect, ConnectOptions } from 'mongoose';
+require('dotenv').config();
 export const dbConnect = () => {
+  console.log(process.env.MONGO_URI);
   connect(process.env.MONGO_URI!, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
