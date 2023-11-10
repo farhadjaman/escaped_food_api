@@ -17,7 +17,7 @@ router.get(
     }
 
     await UserModel.create(sample_users);
-    res.send('Seed Is Done!');
+    res.status(200).send('Seed Is Done!');
   })
 );
 
@@ -28,7 +28,7 @@ router.post(
     const user = await UserModel.findOne({ email });
 
     if (user && (await bcrypt.compare(password, user.password))) {
-      res.send(generateTokenReponse(user));
+      res.status(200).send(generateTokenReponse(user));
     } else {
       res.status(HTTP_BAD_REQUEST).send('Username or password is invalid!');
     }
@@ -57,7 +57,7 @@ router.post(
     };
 
     const dbUser = await UserModel.create(newUser);
-    res.send(generateTokenReponse(dbUser));
+    res.status(200).send(generateTokenReponse(dbUser));
   })
 );
 
