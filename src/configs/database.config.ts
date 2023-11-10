@@ -1,4 +1,3 @@
-require('dotenv').config({ path: '/.env' })
 import { connect, ConnectOptions } from 'mongoose';
 require('dotenv').config();
 export const dbConnect = () => {
